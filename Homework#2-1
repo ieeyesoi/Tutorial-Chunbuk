@@ -1,6 +1,6 @@
 #include <stdio.h> 
 int main() 
-{   // 메인 메소드의 시작
+{   // 메인 함수의 시작
     char charType;  //char(문자)형 변수 charType을 선언
     int integerType;    //int(정수)형 변수 integerType을 선언
     float floatType;    //float(실수)형 변수 floatType을 선언
@@ -25,8 +25,8 @@ int main()
     printf("Size of float*: %ld bytes\n",sizeof(float*)); //Size of float: float이 가르키는 메모리 위치의 크기 bytes를 출력(8byte)
     printf("Size of double*: %ld bytes\n",sizeof(double*)); //Size of double: double이 가르키는 메모리 위치의 크기 bytes를 출력(8byte)
 
-    printf("\n[----- [leeyesol]  [2023070002] -----] \n");
+    printf("\n[----- [leeyesol]  [2023070002] -----] \n"); // 이름과 학번을 출력
 
     return 0; //0을 리턴해 프로그램을 확실히 종료시킴
     
-} // 메인 메소드를 끝냄
+} // 메인 함수를 끝냄
