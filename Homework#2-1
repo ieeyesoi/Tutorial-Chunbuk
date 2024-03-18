@@ -1,0 +1,32 @@
+#include <stdio.h> 
+int main() 
+{   // 메인 메소드의 시작
+    char charType;  //char(문자)형 변수 charType을 선언
+    int integerType;    //int(정수)형 변수 integerType을 선언
+    float floatType;    //float(실수)형 변수 floatType을 선언
+    double doubleType;  //double(실수)형 변수 doubleType을 선언
+
+    printf("Size of char: %ld byte\n",sizeof(charType)); //Size of char: 변수 charType의 크기 bytes를 출력(char형 변수이므로 1byte)
+    printf("Size of int: %ld bytes\n",sizeof(integerType)); //Size of int: 변수 integerType의 크기 bytes를 출력(int형 변수이므로 4byte)
+    printf("Size of float: %ld bytes\n",sizeof(floatType)); //Size of float: 변수 floatType의 크기 bytes를 출력(float형 변수이므로 4byte)
+    printf("Size of double: %ld bytes\n",sizeof(doubleType)); //Size of double: 변수 doubleType의 크기 bytes를 출력(double형 변수이므로 8byte)
+
+    printf("-----------------------------------------\n"); //-----------------------------------------를 출력함
+
+    printf("Size of char: %ld byte\n",sizeof(char));    //Size of char: char 자료형의 크기 bytes를 출력(char 자료형 1byte)
+    printf("Size of int: %ld bytes\n",sizeof(int)); //Size of int: int 자료형의 크기 bytes를 출력(int 자료형 4byte)
+    printf("Size of float: %ld bytes\n",sizeof(float)); //Size of float: float 자료형의 크기 bytes를 출력(float 자료형 4byte)
+    printf("Size of double: %ld bytes\n",sizeof(double));   //Size of double: double 자료형의 크기 bytes를 출력(double 자료형 8byte)
+
+    printf("-----------------------------------------\n"); //-----------------------------------------를 출력함
+
+    printf("Size of char*: %ld byte\n",sizeof(char*));  //Size of char*: char이 가르키는 메모리 위치의 크기bytes를 출력(8byte)
+    printf("Size of int*: %ld bytes\n",sizeof(int*)); //Size of int*: int가 가르키는 메모리 위치의 크기 bytes를 출력(8byte)
+    printf("Size of float*: %ld bytes\n",sizeof(float*)); //Size of float: float이 가르키는 메모리 위치의 크기 bytes를 출력(8byte)
+    printf("Size of double*: %ld bytes\n",sizeof(double*)); //Size of double: double이 가르키는 메모리 위치의 크기 bytes를 출력(8byte)
+
+    printf("\n[----- [leeyesol]  [2023070002] -----] \n");
+
+    return 0; //0을 리턴해 프로그램을 확실히 종료시킴
+    
+} // 메인 메소드를 끝냄
