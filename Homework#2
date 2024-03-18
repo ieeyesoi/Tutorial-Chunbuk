@@ -1,0 +1,55 @@
+ #include <stdio.h>
+int main()   // 메인 메소드 시작
+{   int i;  // 정수형 변수 i 선언
+    int *ptr; // 정수형 포인터 ptr 선언
+    int **dptr; // 정수형 이중 포인터 dptr 선언
+
+    i = 1234;   // 정수형 변수 i에 1234를 저장
+
+    printf("[checking values before ptr = &i] \n"); // [checking values before ptr = &i]를 출력(ptr에 i의 주소를 저장하기 전 결과), \n은 한 줄 밑으로 가는 것을 의미함
+    printf("value of i == %d\n", i); // value of i == i의 값을 출력
+    printf("address of i == %p\n", &i); // address of i == i의 주소를 출력
+    printf("value of ptr == %p\n", ptr); // value of ptr == ptr의 값을 출력
+    printf("address of ptr == %p\n", &ptr); // address of ptr == ptr의 주소를 출력
+
+    ptr = &i; /* ptr is now holding the address of i */ // ptr에 i의 주소를 저장
+
+    printf("\n[checking values after ptr = &i] \n");    // [checking values after ptr = &i]를 출력(ptr에 i의 주소를 저장한 후 결과)
+    printf("value of i == %d\n", i);    // values of i == i의 값을 출력(변하지 않음)
+    printf("address of i == %p\n", &i);     // address of i == i의 주소를 출력(변하지 않음)
+    printf("value of ptr == %p\n", ptr);    // values of ptr == ptr의 값을 출력(i의 주소로 저장된)
+    printf("address of ptr == %p\n", &ptr); // address of ptr == ptr의 주소를 출력(i의 주소로 저장된)
+    printf("value of *ptr == %d\n", *ptr);  // value of *ptr == ptr이 가르키는 주소의 내용 출력(1234)
+
+    dptr = &ptr; /* dptr is now holding the address of ptr */   //dptr에 ptr의 주소를 저장
+
+    printf("\n[checking values after dptr = &ptr] \n"); // [checking values after dptr == &ptr](dptr에 ptr의 주소를 저장한 후 결과)을 출력
+    printf("value of i == %d\n", i);    //value of i == i의 값을 출력(변하지 않음)
+    printf("address of i == %p\n", &i); //address of i == i의 주소를 출력(변하지 않음)
+    printf("value of ptr == %p\n", ptr); //value of ptr == ptr의 값을 출력(20행과 같음)
+    printf("address of ptr == %p\n", &ptr); //address of ptr == ptr의 주소를 출력(21행과 같음)
+    printf("value of *ptr == %d\n", *ptr);  //value of *ptr == 1234를 출력
+    printf("value of dptr == %p\n", dptr); //value of dptr == dptr의 값을 출력(ptr의 주소로 저장된)
+    printf("address of dptr == %p\n", &dptr); //address of dptr == dptr의 주소를 출력(dptr의 주소로 저장된)
+    printf("value of *dptr == %p\n", *dptr);    //value of *dptr == dptr이 가르키는 주소의 내용 출력(000000000061FE1C)
+    printf("value of **dptr == %d\n", **dptr);  //value of **dptr == dptr이 가르키는 ptr 가르키는 주소의 내용을 출력(1234)
+
+    *ptr = 7777;    /* changing the value of *ptr */    // 포인터 ptr에 7777을 저장(ptr이 가르키는 곳은 i이므로 i에 7777을 저장)
+    
+    printf("\n[after *ptr = 7777] \n"); //[after *ptr = 7777]을 출력
+    printf("value of i == %d\n", i);    //value of i == i의 값을 출력(ptr이 가르키는 i의 주소에 7777을 저장한 후)
+    printf("value of *ptr == %d\n", *ptr);  //value of *ptr = *ptr의 값을 출력(ptr이 가르키는 주소의 내용 출력(i를 가르키므로 7777))
+    printf("value of **dptr == %d\n", **dptr);  // value of **dptr == **dptr의 값을 출력(dptr이 가르키는 ptr이 가르키는 주소의 내용을 출력(7777))
+
+    **dptr = 8888;  /* changing the value of **dptr */  // 이중 포인터 dptr에 8888을 저장(dptr이 가르키는 곳은 tpr, tpr이 가르키는 곳은 i이므로 i에 8888을 저장)
+    
+    printf("\n[after **dptr = 8888] \n"); //[after **dptr = 8888]을 출력
+    printf("value of i == %d\n", i);    //value of i == i의 값을 출력(이중 포인터 dptr에 8888을 저장한 후 i 값)
+    printf("value of *ptr == %d\n", *ptr);  //value of *ptr == *ptr의 값을 출력(ptr이 가르키는 주소의 내용을 출력(i를 가르키므로 8888))
+    printf("value of **dptr == %d\n", **dptr);  //value of **dptr == **dptr의 값을 출력(dptr이 가르키는 tpr이 가르키는 주소의 내용을 출력(i를 가르키므로 8888))
+
+    printf("\n[----- [leeyesol]  [2023070002] -----] \n");
+
+    return 0;   // 0을 리턴해 프로그램을 확실히 종료시킴
+
+} // 메인 메소드를 끝냄
